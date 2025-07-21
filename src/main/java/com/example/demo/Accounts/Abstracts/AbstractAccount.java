@@ -2,7 +2,6 @@ package com.example.demo.Accounts.Abstracts;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDateTime;
 

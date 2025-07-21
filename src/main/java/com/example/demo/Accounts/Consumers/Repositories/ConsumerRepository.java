@@ -4,7 +4,13 @@ import com.example.demo.Accounts.Consumers.Models.Consumer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface ConsumerRepository extends JpaRepository<Consumer, Integer> {
+import java.util.Optional;
 
+@Repository
+public interface ConsumerRepository extends JpaRepository<Consumer, Long> {
+    boolean existsByUsername(String username);
+    boolean existsByEmail(String email);
+    Optional<Consumer> findByUsername(String username);
+    Optional<Consumer> findByUserType(String userType);
+    Optional<Consumer> findByEmail(String email);
 }
