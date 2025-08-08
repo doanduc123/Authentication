@@ -72,7 +72,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 
     private UserDetails getUserDetails(String token) {
         Claims claims = jwtUtil.parseClaims(token);
-        String email = claims.getSubject();  // JWT subject là email
+        String email = claims.getSubject();
         return customUserDetailsService.loadUserByEmail(email);
     }
 }
